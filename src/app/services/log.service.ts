@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Log } from "../models/log";
-import { getAllRouteGuards } from '@angular/router/src/utils/preactivation';
+import { BehaviorSubject } from "rxjs";
+import { Observable, of } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LogService {
   logs: Log[];
+  private logSource = new BehaviorSubject<Log>({id: null, text: null, date: null});
+  selectedLog = this.logSource.asObservable();
+  
+
   constructor() { 
     this.logs = [
       {id: '1', text: 'Generated Components', date: new Date('01/08/2018 12:54:27')},
@@ -15,6 +20,11 @@ export class LogService {
     ]
   }
   getLogs() {
-      return this.logs;
+    return this.logs;
   }
+
+  setFormLog(log: Log) {
+    this.logSource.next(log);
+  }
+
 }

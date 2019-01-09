@@ -15,5 +15,10 @@ export class LogsComponent implements OnInit {
   ngOnInit() {
     this.logs = this._logService.getLogs();
   }
+  
+  onSelect(log: Log) {
+    console.log(log);
+
+  }
 
 }
