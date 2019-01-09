@@ -1,5 +1,5 @@
 <div class="card card-body mb-3">
-  <form>
+  <form (ngSubmit)="onSubmit(log)">
     <div class="form-group">
       <input type="text" class="form-control" placeholder="add a log..." name="text" [(ngModel)]="text">
     </div>
