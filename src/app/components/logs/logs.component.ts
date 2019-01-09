@@ -17,7 +17,7 @@ export class LogsComponent implements OnInit {
   }
   
   onSelect(log: Log) {
-    console.log(log);
+    this._logService.setFormLog(log);
 
   }
 
