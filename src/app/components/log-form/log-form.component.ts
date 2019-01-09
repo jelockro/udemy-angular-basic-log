@@ -26,7 +26,7 @@ export class LogFormComponent implements OnInit {
       }
     });
   }
-  onSubmit(log: Log){
+  onSubmit(){
     if (this.isNew) {
       const newLog = {
         id: this.generateId(),
