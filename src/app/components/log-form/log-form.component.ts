@@ -27,11 +27,24 @@ export class LogFormComponent implements OnInit {
     });
   }
   onSubmit(log: Log){
-    const newLog = {
-
+    if (this.isNew) {
+      const newLog = {
+        id: this.generateId(),
+        text: this.text,
+        date: new Date()
+      }
+      this._logService.addLog(newLog);
+    } else {
+      const updatedLog = {
+        id: this.id,
+        text: this.text,
+        date: new Date()
+      }
+      // this._logService.updateLog(updatedLog);
     }
+
   }
-  
+
   generateId() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
       var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
