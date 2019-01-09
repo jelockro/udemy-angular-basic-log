@@ -58,6 +58,8 @@ export class LogService {
         this.logs.splice(index,1 );
       }
     });
+    // Adds to local storage
+    localStorage.setItem('logs', JSON.stringify(this.logs));
   }
   clearState() {
     this.stateSource.next(true);
