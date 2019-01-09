@@ -39,7 +39,7 @@ export class LogService {
     this.logs.unshift(log);
     
     // Adds to local storage
-    localStorage.setItem('logs', JSON.stringify(this.logs))
+    localStorage.setItem('logs', JSON.stringify(this.logs));
 
   } 
   updateLog(log: Log) {
@@ -49,6 +49,8 @@ export class LogService {
       }
     });
     this.logs.unshift(log);
+      // Adds to local storage
+    localStorage.setItem('logs', JSON.stringify(this.logs));
   }
   deleteLog(log: Log){
     this.logs.forEach((curr, index) => {
