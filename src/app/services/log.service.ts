@@ -19,8 +19,8 @@ export class LogService {
       {id: '3', text: 'adds more logs', date: new Date('01/08/2018 12:54:27')}
     ]
   }
-  getLogs() {
-    return this.logs;
+  getLogs(): Observable<Log[]> {
+    return of(this.logs);
   }
 
   setFormLog(log: Log) {
