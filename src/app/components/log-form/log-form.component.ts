@@ -31,7 +31,8 @@ export class LogFormComponent implements OnInit {
       const newLog = {
         id: this.generateId(),
         text: this.text,
-        date: new Date()
+        date: new Date(),
+        
       }
       this._logService.addLog(newLog);
     } else {
@@ -44,8 +45,7 @@ export class LogFormComponent implements OnInit {
       return log = {
         id: null,
         text: '',
-        date: '',
-        isNew: true
+        date: ''
       }
     }
 
