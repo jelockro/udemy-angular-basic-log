@@ -48,13 +48,14 @@ export class LogFormComponent implements OnInit {
         date: ''
       }
     }
-
+    this.clearState();
   }
   clearState() {
     this.isNew = true;
     this.id = null;
     this.text = '';
     this.date = null;
+    this._logService.clearState();
   }
   generateId() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
