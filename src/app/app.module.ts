@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LogFormComponent } from './components/log-form/log-form.component';
 import { LogsComponent } from './components/logs/logs.component';
+import { LogService } from './services/log.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { LogsComponent } from './components/logs/logs.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
