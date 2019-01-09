@@ -1,12 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+// Imports components > declarations
+import { AppComponent } from './app.component'; //**Bootstrap**/
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LogFormComponent } from './components/log-form/log-form.component';
 import { LogsComponent } from './components/logs/logs.component';
+// Imports modules > imports
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+// Imports services > providers
 import { LogService } from './services/log.service';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +21,8 @@ import { LogService } from './services/log.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [LogService],
   bootstrap: [AppComponent]
